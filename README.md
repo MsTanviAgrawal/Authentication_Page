@@ -1,3 +1,4 @@
+
 # Authentication Page
 
 This project is a simple and clean authentication system that includes both **Login** and **Signup** functionality. It is designed to provide users with a smooth experience while also helping me practice frontend and backend authentication concepts.
