@@ -5,6 +5,7 @@ import Login from './pages/Login.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 
 import './App.css'
+import AuthForm from './pages/AuthForm.jsx';
 
 function App() {
  const isAuthenticated = () => !!localStorage.getItem('token');
@@ -12,14 +13,16 @@ function App() {
   return (
     <>
       <div>
-    <BrowserRouter>
+    {/* <BrowserRouter>
       <Routes>
         <Route path="/" element={ isAuthenticated() ? <Navigate to="/dashboard" /> : <Navigate to="/login" /> } />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={ isAuthenticated() ? <Dashboard /> : <Navigate to="/login" /> } />
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
+
+    <AuthForm/>
       </div>
     </>
   )

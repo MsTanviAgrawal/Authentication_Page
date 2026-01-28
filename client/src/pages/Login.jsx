@@ -28,6 +28,7 @@ const Login = () => {
       <h2>Login</h2>
       {error && <div className="alert">{error}</div>}
       <form onSubmit={onSubmit} className="auth-form">
+      
         <input name="email" placeholder="Email" value={form.email} onChange={onChange} type="email" required />
         <input name="password" placeholder="Password" value={form.password} onChange={onChange} type="password" required />
         <button type="submit">Login</button>
