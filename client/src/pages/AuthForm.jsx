@@ -24,6 +24,10 @@ const AuthForm = () => {
     console.log("Logging in with:", loginData);
   };
 
+  const handleForgotPassword = () => {
+    console.log("Redirect to forgot password for:", loginData.email);
+  };
+
   return (
     <div className="main">
       <input type="checkbox" id="chk" aria-hidden="true" />
@@ -40,7 +44,7 @@ const AuthForm = () => {
               <label className="field-label">Username :</label>
               <input
                 type="text"
-                placeholder="Name"
+                placeholder="name"
                 required
                 onChange={(e) => setSignupData({ ...signupData, username: e.target.value })}
               />
@@ -50,7 +54,7 @@ const AuthForm = () => {
               <label className="field-label">Email :</label>
               <input
                 type="email"
-                placeholder="Email"
+                placeholder="email"
                 required
                 onChange={(e) => setSignupData({ ...signupData, email: e.target.value })}
               />
@@ -60,7 +64,7 @@ const AuthForm = () => {
               <label className="field-label">Phone :</label>
               <input
                 type="number"
-                placeholder="Phone"
+                placeholder="phone no."
                 required
                 onChange={(e) => setSignupData({ ...signupData, phoneNo: e.target.value })}
               />
@@ -70,7 +74,7 @@ const AuthForm = () => {
               <label className="field-label">Password :</label>
               <input
                 type="password"
-                placeholder="Pass"
+                placeholder="password"
                 required
                 onChange={(e) => setSignupData({ ...signupData, password: e.target.value })}
               />
@@ -92,9 +96,9 @@ const AuthForm = () => {
             <div className="field-row">
               <label className="field-label">Email :</label>
               <input
-              className='login-field'
+                className='login-field'
                 type="email"
-                placeholder="Email"
+                placeholder="email"
                 required
                 onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
               />
@@ -103,16 +107,28 @@ const AuthForm = () => {
             <div className="field-row">
               <label className="field-label">Password :</label>
               <input
-               className='login-field'
+                className='login-field'
                 type="password"
-                placeholder="Pass"
+                placeholder="password"
                 required
                 onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
               />
             </div>
+            
+            <div className="forgot-password-container">
+              <span className="forgot-password" onClick={handleForgotPassword}>
+                Forgot Password?
+              </span>
+            </div>
           </div>
 
           <button type="submit">Login</button>
+
+          {/* New Sign Up Option */}
+          <div className="switch-form">
+            Don't have an account? 
+            <label htmlFor="chk" className="signup-link">  Sign up</label>
+          </div>
         </form>
       </div>
     </div>
